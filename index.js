@@ -20,7 +20,7 @@ app.get('/', (req,res) =>{
     res.render('index')
 })
 
-app.post('/upload', upload.array, (req,res) => {
+app.post('/upload', upload.single('file'), (req,res) => {
     res.send("Arquivo recebido!")
 })
 app.listen(8080, () => {
